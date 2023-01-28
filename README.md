@@ -10,7 +10,6 @@ by the Stan developers. The code for this example is found in the
 `/cmdstan/examples/bernoulli` directory of a 
 [CmdStan installation](https://github.com/stan-dev/cmdstan/tree/develop/examples/bernoulli). 
 The second example will be a binomial model using data from 
-
 [Linear Models with R](https://julianfaraway.github.io/faraway/LMR/). 
 The code for this section will be provided below. 
 
