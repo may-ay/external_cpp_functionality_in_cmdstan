@@ -1,6 +1,6 @@
 # Introduction
 
-The aim of this walk-through is to provide [Stan](https://mc-stan.org/) users  
+The aim of this walk-through is to provide [Stan](https://mc-stan.org/) users 
 with the knowledge of incorporating external C++ code into their preexisting Stan models. 
 The main benefit of doing so is the ability to create and use custom C++ functions 
 within your Stan model. 
