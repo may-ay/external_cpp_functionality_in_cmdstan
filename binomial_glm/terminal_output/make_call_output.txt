@@ -1,0 +1,24 @@
+~/cmdstan-2.29.2$ make STANCFLAGS=--allow-undefined USER_HEADER=examples/binomial_glm/external_binomial_glm.hpp examples/binomial_glm/binomial_glm
+
+--- Translating Stan model to C++ code ---
+bin/stanc --allow-undefined --o=examples/binomial_glm/binomial_glm.hpp examples/binomial_glm/binomial_glm.stan
+Warning in 'examples/binomial_glm/binomial_glm.stan', line 8, column 4: Declaration
+    of arrays by placing brackets after a variable name is deprecated and
+    will be removed in Stan 2.32.0. Instead use the array keyword before the
+    type. This can be changed automatically using the auto-format flag to
+    stanc
+Warning in 'examples/binomial_glm/binomial_glm.stan', line 9, column 4: Declaration
+    of arrays by placing brackets after a variable name is deprecated and
+    will be removed in Stan 2.32.0. Instead use the array keyword before the
+    type. This can be changed automatically using the auto-format flag to
+    stanc
+Warning in 'examples/binomial_glm/binomial_glm.stan', line 11, column 4: Declaration
+    of arrays by placing brackets after a variable name is deprecated and
+    will be removed in Stan 2.32.0. Instead use the array keyword before the
+    type. This can be changed automatically using the auto-format flag to
+    stanc
+
+--- Compiling, linking C++ code ---
+g++ -std=c++1y -pthread -D_REENTRANT -Wno-sign-compare -Wno-ignored-attributes      -I stan/lib/stan_math/lib/tbb_2020.3/include    -O3 -I src -I stan/src -I lib/rapidjson_1.1.0/ -I lib/CLI11-1.9.1/ -I stan/lib/stan_math/ -I stan/lib/stan_math/lib/eigen_3.3.9 -I stan/lib/stan_math/lib/boost_1.75.0 -I stan/lib/stan_math/lib/sundials_6.0.0/include -I stan/lib/stan_math/lib/sundials_6.0.0/src/sundials    -DBOOST_DISABLE_ASSERTS          -c -Wno-ignored-attributes   -include examples/binomial_glm/external_binomial_glm.hpp -x c++ -o examples/binomial_glm/binomial_glm.o examples/binomial_glm/binomial_glm.hpp
+g++ -std=c++1y -pthread -D_REENTRANT -Wno-sign-compare -Wno-ignored-attributes      -I stan/lib/stan_math/lib/tbb_2020.3/include    -O3 -I src -I stan/src -I lib/rapidjson_1.1.0/ -I lib/CLI11-1.9.1/ -I stan/lib/stan_math/ -I stan/lib/stan_math/lib/eigen_3.3.9 -I stan/lib/stan_math/lib/boost_1.75.0 -I stan/lib/stan_math/lib/sundials_6.0.0/include -I stan/lib/stan_math/lib/sundials_6.0.0/src/sundials    -DBOOST_DISABLE_ASSERTS                -Wl,-L,"/home/dasl/cmdstan-2.29.2/stan/lib/stan_math/lib/tbb" -Wl,-rpath,"/home/dasl/cmdstan-2.29.2/stan/lib/stan_math/lib/tbb"      examples/binomial_glm/binomial_glm.o src/cmdstan/main.o        -Wl,-L,"/home/dasl/cmdstan-2.29.2/stan/lib/stan_math/lib/tbb" -Wl,-rpath,"/home/dasl/cmdstan-2.29.2/stan/lib/stan_math/lib/tbb"   stan/lib/stan_math/lib/sundials_6.0.0/lib/libsundials_nvecserial.a stan/lib/stan_math/lib/sundials_6.0.0/lib/libsundials_cvodes.a stan/lib/stan_math/lib/sundials_6.0.0/lib/libsundials_idas.a stan/lib/stan_math/lib/sundials_6.0.0/lib/libsundials_kinsol.a  stan/lib/stan_math/lib/tbb/libtbb.so.2 -o examples/binomial_glm/binomial_glm
+rm -f examples/binomial_glm/binomial_glm.o

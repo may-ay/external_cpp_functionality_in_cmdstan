@@ -1,0 +1,33 @@
+~/cmdstan-2.29.2/examples/binomial_glm$ ~/cmdstan-2.29.2/bin/stansummary output_*.csv
+Inference for Stan model: binomial_glm_model
+3 chains: each with iter=(1000,1000,1000); warmup=(0,0,0); thin=(1,1,1); 3000 iterations saved.
+
+Warmup took (0.11, 0.11, 0.11) seconds, 0.32 seconds total
+Sampling took (0.11, 0.11, 0.11) seconds, 0.34 seconds total
+
+                 Mean     MCSE   StdDev     5%    50%       95%    N_Eff  N_Eff/s    R_hat
+
+lp__             -489  7.0e-02      2.4   -493   -489  -4.9e+02     1147     3394     1.00
+accept_stat__    0.92  1.4e-03  8.7e-02   0.74   0.95      1.00  3.7e+03  1.1e+04  1.0e+00
+stepsize__       0.17      nan  1.0e-15   0.17   0.17      0.17      nan      nan      nan
+treedepth__       4.4  1.1e-02  5.7e-01    4.0    4.0       5.0  2.6e+03  7.8e+03  1.0e+00
+n_leapfrog__       26  1.7e-01  9.1e+00     15     31        31  2.9e+03  8.4e+03  1.0e+00
+divergent__      0.00      nan  0.0e+00   0.00   0.00      0.00      nan      nan      nan
+energy__          494  1.0e-01  3.3e+00    490    494       500  1.1e+03  3.1e+03  1.0e+00
+
+b[1]             -1.4  6.2e-03     0.26   -1.8   -1.4  -9.7e-01     1815     5369     1.00
+b[2]              1.0  7.6e-03     0.35   0.47    1.0   1.6e+00     2097     6205     1.00
+b[3]              2.0  6.9e-03     0.30    1.6    2.0   2.6e+00     1919     5677     1.00
+b[4]             -1.5  3.4e-03     0.17   -1.8   -1.5  -1.3e+00     2395     7085     1.00
+b[5]              1.2  8.0e-03     0.32   0.66    1.2   1.7e+00     1608     4759     1.00
+b[6]              3.7  1.1e-02     0.47    2.9    3.7   4.5e+00     2006     5936      1.0
+b[7]            -0.56  6.9e-03     0.34   -1.1  -0.55   5.1e-03     2412     7136     1.00
+b[8]            -0.37  7.1e-03     0.35  -0.95  -0.35   2.3e-01     2404     7111     1.00
+b[9]             -1.3  1.1e-02     0.50   -2.1   -1.3  -5.2e-01     2124     6285      1.0
+b[10]           -0.54  8.2e-03     0.37   -1.1  -0.55   9.2e-02     2000     5918     1.00
+b[11]            -1.3  1.1e-02     0.46   -2.1   -1.3  -5.9e-01     1846     5463     1.00
+
+Samples were drawn using hmc with nuts.
+For each parameter, N_Eff is a crude measure of effective sample size,
+and R_hat is the potential scale reduction factor on split chains (at
+convergence, R_hat=1).
