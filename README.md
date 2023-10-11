@@ -1,37 +1,39 @@
 # Introduction
 
-The aim of this walk-through is to provide [CmdStan](https://mc-stan.org/) users 
-with the knowledge of incorporating external C++ code into their preexisting Stan models. 
-The main benefit of doing so is the ability to create and use custom C++ functions 
+The aim of this walk-through is to provide [CmdStan](https://mc-stan.org/users/interfaces/cmdstan) 
+users with the knowledge needed to incorporate external C++ code into their existing 
+[Stan](https://mc-stan.org/) models. 
+The primary advantage of doing so is the ability to create and use custom C++ functions 
 within your Stan model. 
 
 The first example of this functionality will use the Bernoulli example code provided 
 by the Stan developers. The code for this example is found in the 
-`/cmdstan/examples/bernoulli` directory of a 
+"/cmdstan/examples/bernoulli" directory of the 
 [CmdStan installation](https://github.com/stan-dev/cmdstan/tree/develop/examples/bernoulli). 
 The second example will be a binomial model using data from 
-[Linear Models with R](https://julianfaraway.github.io/faraway/LMR/). 
+[Linear Models with R](https://julianfaraway.github.io/faraway/LMR/).
 The code for this section will be provided below. 
 
-There exists other Stan interfaces that provide external C++ functionality as well. 
+There are other Stan interfaces that offer external C++ functionality. 
 A notable example is [RStan](http://mc-stan.org/rstan/). However, the 
-difficulty with using external C++ code is relatively the same in both CmdStan 
-and RStan.The deciding factors in choosing a Stan interface in this case are: 
+challenge of using external C++ code is relatively similar in both CmdStan and 
+RStan. The key factors to consider when choosing a Stan interface in this case 
+include:
 
-- How comfortable you are with each of the interfaces.
-- It is easier to enter data and set hyperparameters within RStan. 
-- Power users will find CmdStan easier since data entry and hyperparameters are set through the terminal. 
-- CmdStan is typically more-up-to-date when it comes the Stan back-end. 
+- Your comfort level with each of the interfaces.
+- Data input and hyperparameter setup are more straightforward in RStan.
+- Power users may find CmdStan more convenient since data input and hyperparameter configuration are done through the terminal.
+- CmdStan is typically more up-to-date with respect to the Stan back-end.
 
 With any Stan interface, the user will be required to [template](https://cplusplus.com/doc/oldtutorial/templates/)
 their C++ code to match the templating found in [Stan's math library](https://mc-stan.org/math/). 
-More detail will be provided below regarding the process of templating C++ code
-to match the templating found in Stan's math library. This requirement remains the 
-biggest time commitment in this process. 
+Further details regarding the process of templating C++ code to match Stan's math 
+library will be provided below. This requirement constitutes the most 
+time-intensive aspect of this process.
 
-Additional information on using external C++ code within RStan can be found in this 
-[vinette](https://mc-stan.org/rstan/articles/external.html). Using 
-external C++ code within RStan will not be explored in this walk-through. 
+For additional information on using external C++ code within RStan, you can refer 
+to this [vinette](https://mc-stan.org/rstan/articles/external.html).
+The use of external C++ code within RStan will not be explored in this walkthrough.
 
 ## Installation
 
@@ -42,14 +44,14 @@ repository. For example: The release that was used for this walk-through is
 [cmdstan-2.29.2.tar.gz](https://github.com/stan-dev/cmdstan/releases/download/v2.29.2/cmdstan-2.29.2.tar.gz). 
 
 Once the tar.gz is downloaded and unzipped into a directory of your choosing 
-(the system's home directory was used for this example), then you open a terminal 
-window and cd into the unzipped folder (e.g. `cd ~/cmdstan-2.29.2/`). Within your 
+(the system's home directory was used for this example), you can open a terminal 
+window and cd into the unzipped folder (e.g. `cd ~/cmdstan-2.29.2/`). Inside your 
 terminal window, run `make build` to complete the CmdStan installation process. 
 If you wanted to delete CmdStan from your system, you can run `make clean-all` 
 from the same directory as you called `make build`. 
 
-More recent versions of CmdStan can be used. However, the external C++ 
-functionality may differ with future releases of CmdStan 
+More recent versions of CmdStan can be used; however, the external C++ 
+functionality may differ in future releases of CmdStan.
 
 The details of the system used for this walkthrough: 
 
@@ -63,6 +65,6 @@ For detailed terminal output and what you should expect to see after running the
 `make`, `sample`, and `stansummary` commands, refer to the "terminal_output" 
 directories within the "bernoulli" and "binomial_glm" directories. These directories 
 can be found in the same github repository associated with this documentation: 
-"/external_cpp_functionality_in_stan". This repository also contains all of the 
+"/external_cpp_functionality_in_cmdstan". This repository also contains all of the 
 code referred to within this walkthrough, as well as examples of CmdStan 
 makefiles that can be used for each set of code. 
