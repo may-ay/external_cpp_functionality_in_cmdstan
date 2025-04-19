@@ -1,7 +1,7 @@
 ---
 title: "External C++ Functionality in CmdStan"
 author: 
-- "Matthew Amato-Yarbrough, mba75@nau.edu"
+- "May Amato-Yarbrough, mba75@nau.edu"
 date: January 2023
 output:
   html_document:
